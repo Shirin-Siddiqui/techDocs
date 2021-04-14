@@ -62,8 +62,9 @@
 		    <nav id="docs-nav" class="docs-nav navbar">
 			    <ul class="section-items list-unstyled nav flex-column pb-3">
 				    <li class="nav-item section-title"><a class="nav-link scrollto active" href="#section-1"><span class="theme-icon-holder mr-2"><i class="fas fa-map-signs"></i></span>Docker</a></li>
-				    <li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">Docker - Errors Faced</a></li>
-				    
+					<li class="nav-item"><a class="nav-link scrollto" href="#item-1-1">Docker - Installation</a></li>
+					<li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-2"><span class="theme-icon-holder mr-2"><i class="fas fa-arrow-down"></i></span>Home Automation Project</a></li>
+				    <li class="nav-item"><a class="nav-link scrollto" href="#item-2-1">Local Setup</a></li>
 			    </ul>
 
 		    </nav><!--//docs-nav-->
@@ -81,15 +82,58 @@
 						
 				    </header>
 				    <section class="docs-section" id="item-1-1">
-						<h2 class="section-heading">Docker - Errors Faced</h2>
-						<p>sample. </p>
-						<p>Code Example: <code>npm install &lt;package&gt;</code></p>
-						
-                        
-                       
+						<h2 class="section-heading">Docker - Installation</h2>
+						<p>This is for first time installation, where there are no previous docker installations, if there are please refer to the official docker documents to remove previous installations and then run the following commands
+						</p>
+						<p>1) Install docker on Linux / Raspbian - </p>
+						<p style="margin-left: 30px;"><code>sudo apt-get update</code></p>
+						<p style="margin-left: 30px;"><code>sudo apt install docker.io</code></p>
+						<p style="margin-left: 30px;"><code>sudo systemctl start docker</code></p>
+						<p style="margin-left: 30px;"><code>sudo systemctl enable docker</code></p>
+                        <p>To check if successfully installed</p>
+						<p style="margin-left: 30px;"><code>docker --version</code></p>
+						<p>2) Install docker-compose on Ubuntu - </p>
+						<p style="margin-left: 30px;"><code>sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose</code></p>
+						<p style="margin-left: 30px;"><code>sudo chmod +x /usr/local/bin/docker-compose</code></p>
+						<p style="margin-left: 30px;"><code>sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</code></p>
+                        <p>To check if successfully installed</p>
+						<p style="margin-left: 30px;"><code>docker-compose --version</code></p>
+						<p>3) Install docker-compose on Raspbian (Docker compose if installed by any other way wil give unwanted errors, follow this method of download to avoid errors) - </p>
+						<p style="margin-left: 30px;"><code>sudo apt-get install -y libffi-dev libssl-dev</code></p>
+						<p style="margin-left: 30px;"><code>sudo apt-get install -y python3 python3-pip</code></p>
+						<p style="margin-left: 30px;"><code>sudo apt-get remove python-configparser</code></p>
+						<p style="margin-left: 30px;"><code>sudo pip3 -v install docker-compose</code></p>
+                        <p>To check if successfully installed</p>
+						<p style="margin-left: 30px;"><code>docker-compose --version</code></p>
 					</section><!--//section-->
 					
 					
+					
+				</article><!--//docs-article-->
+
+				<article class="docs-article" id="section-2">
+				    <header class="docs-header">
+					    <h1 class="docs-heading">Home Automation Project Local Setup</h1>
+					</header>
+					<section class="docs-section" id="item-2-1">
+						<h2 class="section-heading">Home Automation Code</h2>
+						<h5>The Following project uses Docker to run the API which creates connections with ports on Raspberypi, These ports are connect to relay modules which turn the device on or off based on the commands given to the API</h5>
+						<p>To run the project on your Local Server - </p>
+						<p style="margin-left: 30px;">Clone the Repo - <code>https://github.com/Shirin-Siddiqui/homeAutomation.git</code></p>
+						<p style="margin-left: 30px;">Run the following command in the Root Directory<code>sudo docker-compose up --build</code></p>
+
+
+						<h5>Github Code Example :</h5>
+						<div class="docs-code-block">
+							<!-- ** Embed github code starts ** -->
+							
+							<script src="https://gist.github.com/a12737e78e8e90eebd11d8d630467530.js"></script>
+							<!-- ** Embed github code ends ** -->
+						</div><!--//docs-code-block-->
+						
+					</section><!--//section-->
+				     
+				
 			    </article><!--//docs-article-->
 
 			    <footer class="footer">
